@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+
+  .left_header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    font-weight: bold;
+    font-size: 25px;
+    text-transform: uppercase;
+  }
+
+  .rigth_header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .header_title {
+  }
+  .header_logo {
+    svg {
+      width: 65px;
+      height: 65px;
+    }
+  }
+}
