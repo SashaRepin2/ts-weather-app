@@ -7,5 +7,5 @@ interface Props {
 }
 
 export const CardDay = ({ dayInfo }: Props) => {
-  return <div>{dayInfo.toString()}</div>;
+  return <div>{dayInfo}</div>;
 };
