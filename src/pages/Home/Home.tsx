@@ -9,11 +9,13 @@ interface Props {}
 
 export const Home = (props: Props) => {
   return (
-    <div className={styles.home}>
-      <ThisDay />
-      <ThisDayInfo />
+    <>
+      <div className={styles.home}>
+        <ThisDay />
+        <ThisDayInfo />
+      </div>
       <WeekDays />
-    </div>
+    </>
   );
 };
 

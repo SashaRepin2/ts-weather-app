@@ -67,8 +67,8 @@ export const GlobalSelector = ({ id }: Props) => {
     case "weather_sun":
       return (
         <svg
-          width="119"
-          height="119"
+          width="50"
+          height="50"
           viewBox="0 0 119 119"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
