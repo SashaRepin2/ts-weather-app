@@ -74,10 +74,13 @@ export const WeekDays = (props: Props) => {
   ];
 
   return (
-    <div className={styles.week_days}>
-      {days.map((el: Day) => {
-        return <CardDay dayInfo={el} />;
-      })}
-    </div>
+    <>
+      <Tabs />
+      <div className={styles.week_days}>
+        {days.map((el: Day) => {
+          return <CardDay dayInfo={el} />;
+        })}
+      </div>
+    </>
   );
 };
