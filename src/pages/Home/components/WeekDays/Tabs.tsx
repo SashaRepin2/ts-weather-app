@@ -12,7 +12,7 @@ export const Tabs = ({ arrayFilters }: Props) => {
       <div className={styles.tabs__wrapper}>
         {arrayFilters?.map((el) => {
           return (
-            <div className={styles.tab} key={el.value}>
+            <div className={styles.tab + " active"} key={el.value}>
               {el.value}
             </div>
           );

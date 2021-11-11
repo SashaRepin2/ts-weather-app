@@ -14,6 +14,12 @@ export interface Day {
 }
 
 export const WeekDays = (props: Props) => {
+  const arrayTabs = [
+    { value: "На неделю" },
+    { value: "На 10 дней" },
+    { value: "На месяц" },
+  ];
+
   const days: Day[] = [
     {
       day: "Сегодня",
@@ -26,7 +32,7 @@ export const WeekDays = (props: Props) => {
     {
       day: "Завтра",
       day_info: "29 авг",
-      icon_id: "small_rain_sun",
+      icon_id: "weather_small_rain_sun",
       temp_day: "+18",
       temp_night: "+15",
       info: "небольшой дождь и солнце",
@@ -34,7 +40,7 @@ export const WeekDays = (props: Props) => {
     {
       day: "Ср",
       day_info: "30 авг",
-      icon_id: "small_rain",
+      icon_id: "weather_small_rain",
       temp_day: "+18",
       temp_night: "+15",
       info: "небольшой дождь",
@@ -42,7 +48,7 @@ export const WeekDays = (props: Props) => {
     {
       day: "Чт",
       day_info: "28 авг",
-      icon_id: "mainly_cloudy",
+      icon_id: "weather_mainly_cloudy",
       temp_day: "+18",
       temp_night: "+15",
       info: "Облачно",
@@ -50,7 +56,7 @@ export const WeekDays = (props: Props) => {
     {
       day: "Пт",
       day_info: "28 авг",
-      icon_id: "rain",
+      icon_id: "weather_rain",
       temp_day: "+18",
       temp_night: "+15",
       info: "Облачно",
@@ -74,13 +80,13 @@ export const WeekDays = (props: Props) => {
   ];
 
   return (
-    <>
-      <Tabs />
+    <div className={styles.container}>
+      <Tabs arrayFilters={arrayTabs} />
       <div className={styles.week_days}>
         {days.map((el: Day) => {
           return <CardDay dayInfo={el} />;
         })}
       </div>
-    </>
+    </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import Graphic from "../../shared_components/Graphic/Graphic";
 import { ThisDay } from "./components/ThisDay/ThisDay";
 import { ThisDayInfo } from "./components/ThisDayInfo/ThisDayInfo";
 import { WeekDays } from "./components/WeekDays/WeekDays";
@@ -15,6 +16,7 @@ export const Home = (props: Props) => {
         <ThisDayInfo />
       </div>
       <WeekDays />
+      <Graphic />
     </>
   );
 };
