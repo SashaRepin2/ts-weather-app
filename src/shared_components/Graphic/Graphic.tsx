@@ -7,36 +7,36 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  Legend,
 } from "recharts";
 import CustomTooltip from "./CustomToolTip";
 
 import styles from "./Graphic.module.scss";
 
-interface Props {
-  WIDTH?: number;
-  HEIGHT?: number;
-  PADDING?: number;
-  DPI_WIDTH?: number;
-  DPI_HEIGHT?: number;
-  VIEW_HEIGHT?: number;
-  VIEW_WIDTH?: number;
-  ROWS_COUNT?: number;
-  SPEED?: number;
-}
+interface Props {}
 
 const data = [
-  { date: "1", dayTemp: 18, nightTemp: -12.321 },
-  { date: "3", dayTemp: 28.321, nightTemp: -11.321 },
-  { date: "4", dayTemp: 27.321, nightTemp: -17.321 },
-  { date: "5", dayTemp: 26.321, nightTemp: 15.321 },
-  { date: "6", dayTemp: 29.321, nightTemp: 11.321 },
-  { date: "7", dayTemp: 21.321, nightTemp: 14.321 },
+  { date: "Пн", dayTemp: 18, nightTemp: -12.321 },
+  { date: "Вт", dayTemp: 28.321, nightTemp: -11.321 },
+  { date: "Ср", dayTemp: 27.321, nightTemp: -17.321 },
+  { date: "Чт", dayTemp: 26.321, nightTemp: 15.321 },
+  { date: "Пт", dayTemp: 29.321, nightTemp: 11.321 },
+  { date: "Сб", dayTemp: 21.321, nightTemp: 14.321 },
+  { date: "Вс", dayTemp: 21.321, nightTemp: 14.321 },
 ];
 
 const Graphic = (settings: Props) => {
   return (
     <div className={styles.card}>
-      <ResponsiveContainer width="100%" height={400}>
+      <div className={styles.top_bar}>
+        <div className={styles.top_bar__title}>График прогнозов на неделю </div>
+      </div>
+
+      <ResponsiveContainer
+        className={styles.card__chart}
+        width="100%"
+        height={400}
+      >
         <LineChart
           data={data}
           margin={{
@@ -46,6 +46,14 @@ const Graphic = (settings: Props) => {
             bottom: 40,
           }}
         >
+          {/* Легенда */}
+          <Legend
+            wrapperStyle={{
+              backgroundColor: "#f5f5f5",
+              border: "1px solid #d5d5d5",
+              padding: "5px",
+            }}
+          />
           {/* Сетка */}
           <CartesianGrid
             stroke="#4793FF"
@@ -73,7 +81,7 @@ const Graphic = (settings: Props) => {
           <Line
             // type="monotone"
             dataKey="dayTemp"
-            stroke="#FFFFFF"
+            stroke="#4793FF"
             fill="#8884d8"
             strokeWidth={2}
           />

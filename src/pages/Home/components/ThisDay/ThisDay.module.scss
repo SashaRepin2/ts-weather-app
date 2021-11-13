@@ -5,8 +5,8 @@
   max-width: 400px;
   width: 100%;
 
-  background: $card-light-background;
-  box-shadow: $card-box-shadow;
+  background: var(#{--components-background-default});
+  box-shadow: var(#{--card-shadow-default});
   border-radius: $card-border-radius;
 
   .top_block {
@@ -28,7 +28,7 @@
 
     .this__day_name {
       font-size: 40px;
-      color: #000000;
+      color: var(#{--text-color-default});
     }
   }
 

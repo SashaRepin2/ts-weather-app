@@ -6,8 +6,8 @@
   padding: 20px;
   width: 100%;
 
-  background: $card-light-background;
-  box-shadow: $card-box-shadow;
+  background: var(#{--components-background-default});
+  box-shadow: var(#{--card-shadow-default});
   border-radius: $card-border-radius;
 
   .card__day_info_items {
@@ -39,11 +39,11 @@
 
       .item__name {
         font-size: 18px;
-        color: #000000;
+        color: #939cb0;
       }
       .item__value {
         font-size: 18px;
-        color: #000000;
+        color: var(#{--text-color-default});
       }
     }
   }

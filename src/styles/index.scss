@@ -1,5 +1,5 @@
 @import "~normalize.css";
-
+@import "./variables.scss";
 // FONTS
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
 
@@ -10,27 +10,28 @@
   box-sizing: border-box;
 }
 
-.App {
+body {
+  font-family: "Open Sans", sans-serif;
+  transition: 0.3s;
+  background-color: var(#{--body-background-default});
 }
 
 main {
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-body {
-  font-family: "Open Sans", sans-serif;
-}
-
+//SCROLLBAR
 body::-webkit-scrollbar {
   width: 15px; /* ширина scrollbar */
   padding: 5px;
 }
 body::-webkit-scrollbar-track {
-  background: #b0cfff; /* цвет дорожки */
+  background: var(#{--body-scrollbar-track-default}); /* цвет дорожки */
 }
 body::-webkit-scrollbar-thumb {
-  background-color: rgba(71, 147, 255, 1); /* цвет плашки */
+  background-color: var(#{--body-scrollbar-thumb-default}); /* цвет плашки */
   border-radius: 20px; /* закругления плашки */
 }

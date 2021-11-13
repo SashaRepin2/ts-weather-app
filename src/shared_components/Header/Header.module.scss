@@ -1,11 +1,8 @@
+@import "../../styles/variables.scss";
+
 header {
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #b0cfff;
   padding: 10px;
-  z-index: 1000;
 
   .container {
     display: flex;
@@ -32,6 +29,8 @@ header {
       flex-wrap: nowrap;
     }
     .header_title {
+      margin-left: 15px;
+      color: $primary-color;
     }
     .header_logo {
       svg {

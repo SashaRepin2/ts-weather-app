@@ -7,41 +7,74 @@ $light-color: #000;
 $dark-color: #fff;
 $base-color: #939cb0;
 
+// BODY
+// Background
 $body-background-dark: #0d1117;
 $body-background-light: #fff;
+// Scrollbar track
+$body-scrollbar-track-dark: #4f4f4f;
+$body-scrollbar-track-light: #b0cfff;
+// Scrollbar thumb
+$body-scrollbar-thumb-dark: #2e3035;
+$body-scrollbar-thumb-light: rgba(71, 147, 255, 1);
 
+// COMPONENTS
+// Title
+$components-title-background-light: #b0cfff;
+$components-title-background-dark: #2e3035;
+
+// Background
 $components-background-dark: #4f4f4f;
 $components-background-light: #fff;
 
+// CARD
+// Background
 $card-background-light: rgba(71, 147, 255, 0.2);
 $card-background-dark: #2e3035;
-
+// Shadow
 $card-box-shadow-light: 0px 3px 20px rgba(147, 144, 144, 0.28);
 $card-box-shadow-dark: 0px 3px 20px rgba(5, 5, 5, 0.28);
 
 :root {
-  //body-background
+  // BODY
+  // Background
   --body-background-dark: #{$body-background-dark};
   --body-background-light: #{$body-background-light};
-  --body-background-default: var(#{--body-background-light});
+  --body-background-default: var(#{--body-background-dark});
+  // Scrollbar
+  //Thumb
+  --body-scrollbar-thumb-dark: #{$body-scrollbar-thumb-dark};
+  --body-scrollbar-thumb-light: #{$body-scrollbar-thumb-light};
+  --body-scrollbar-thumb-default: var(#{--body-scrollbar-thumb-dark});
+  //Background
+  --body-scrollbar-track-dark: #{$body-scrollbar-track-dark};
+  --body-scrollbar-track-light: #{$body-scrollbar-track-light};
+  --body-scrollbar-track-default: var(#{--body-scrollbar-track-dark});
 
-  //components-background
+  // COMPONENTS
+  // Title-background
+  --components-title-background-dark: #{$components-title-background-dark};
+  --components-title-background-light: #{$components-title-background-light};
+  --components-title-background-default: var(
+    #{--components-title-background-dark}
+  );
+  //COMPONENTS-background
   --components-background-dark: #{$components-background-dark};
   --components-background-light: #{$components-background-light};
-  --components-background-default: var(#{--components-background-light});
+  --components-background-default: var(#{--components-background-dark});
 
-  //card-background
+  //CARD
+  //CARD-background
   --card-background-dark: #{$card-background-dark};
   --card-background-light: #{$card-background-light};
-  --card-background-default: var(#{--card-background-light});
-
-  //card-shadow
+  --card-background-default: var(#{--card-background-dark});
+  // CAR-shadow
   --card-shadow-dark: #{$card-box-shadow-dark};
   --card-shadow-light: #{$card-box-shadow-light};
-  --card-shadow-default: var(#{--card-shadow-light});
+  --card-shadow-default: var(#{--card-shadow-dark});
 
-  //text
+  // TEXT
   --text-color-dark: #{$dark-color};
   --text-color-light: #{$light-color};
-  --text-color-default: var(#{--text-color-light});
+  --text-color-default: var(#{--text-color-dark});
 }

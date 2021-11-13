@@ -1,34 +1,92 @@
 @import "../../styles/variables.scss";
 .card {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  background: $card-light-background;
-  border-radius: $card-border-radius;
-  box-shadow: $card-box-shadow;
   margin-top: 50px;
+
+  // DESIGN
+  box-shadow: $card-box-shadow;
+  border-radius: $card-border-radius;
+
+  .top_bar {
+    // POSITION
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+
+    // FONT
+    color: var(#{--text-color-default});
+    font-size: 18px;
+
+    // DESIGN
+    border-radius: $card-border-radius $card-border-radius 0 0;
+    background-color: var(#{--components-title-background-default});
+  }
+
+  .card__chart {
+    // DESIGN
+    background-color: #212025; //var(#{--components-background-default});
+    border-radius: 0 0 $card-border-radius $card-border-radius;
+  }
 }
 
 .custom_tooltip {
+  // POSITION
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  background: $card-light-background;
+
+  // FONT
+  color: var(#{--text-color-default});
+
+  // DESIGN
   border-radius: $card-border-radius;
-  box-shadow: $card-box-shadow;
 
   .title {
+    // POSITION
+    width: 100%;
+    padding: 5px;
+
+    // FONT
+    text-align: center;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
+
+    // DESIGN
+    border-radius: $card-border-radius $card-border-radius 0 0;
+    background-color: var(#{--components-title-background-default});
   }
 
-  .label {
-  }
   .description {
-    .value {
+    // POSITION
+    padding: 5px;
+
+    // DESIGN
+    background-color: #0d1117; //var(#{--components-background-default})
+    border-radius: 0 0 $card-border-radius $card-border-radius;
+
+    .item {
+      // POSITION
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      // FONT
       font-size: 14px;
-      font-weight: normal;
+
+      .name {
+        // POSITION
+        margin-right: 5px;
+        // FONT
+        font-weight: bold;
+      }
+
+      .value {
+        // FONT
+        font-weight: normal;
+      }
     }
   }
 }
