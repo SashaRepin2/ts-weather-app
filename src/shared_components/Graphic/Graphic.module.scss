@@ -6,7 +6,7 @@
   margin-top: 50px;
 
   // DESIGN
-  box-shadow: $card-box-shadow;
+  box-shadow: var(#{--card-shadow-default});
   border-radius: $card-border-radius;
 
   .top_bar {
@@ -25,9 +25,12 @@
   }
 
   .card__chart {
+    //FONT
+
     // DESIGN
-    background-color: #212025; //var(#{--components-background-default});
-    border-radius: 0 0 $card-border-radius $card-border-radius;
+    // background-color: #212025; //var(#{--components-background-default});
+    border-radius: $card-border-radius;
+    // margin-bottom: 10px;
   }
 }
 

@@ -84,7 +84,7 @@ export const WeekDays = (props: Props) => {
       <Tabs arrayFilters={arrayTabs} />
       <div className={styles.week_days}>
         {days.map((el: Day) => {
-          return <CardDay dayInfo={el} />;
+          return <CardDay dayInfo={el} key={el.day} />;
         })}
       </div>
     </div>

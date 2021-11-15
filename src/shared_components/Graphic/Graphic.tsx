@@ -1,4 +1,7 @@
-import React, { createRef, useEffect, useRef } from "react";
+import React from "react";
+import CustomTooltip from "./CustomToolTip";
+import styles from "./Graphic.module.scss";
+
 import {
   LineChart,
   Line,
@@ -9,23 +12,24 @@ import {
   ResponsiveContainer,
   Legend,
 } from "recharts";
-import CustomTooltip from "./CustomToolTip";
-
-import styles from "./Graphic.module.scss";
+import { useTheme } from "../../hooks/useTheme";
+import { Themes } from "../../context/ThemeContex";
 
 interface Props {}
 
-const data = [
-  { date: "Пн", dayTemp: 18, nightTemp: -12.321 },
-  { date: "Вт", dayTemp: 28.321, nightTemp: -11.321 },
-  { date: "Ср", dayTemp: 27.321, nightTemp: -17.321 },
-  { date: "Чт", dayTemp: 26.321, nightTemp: 15.321 },
-  { date: "Пт", dayTemp: 29.321, nightTemp: 11.321 },
-  { date: "Сб", dayTemp: 21.321, nightTemp: 14.321 },
-  { date: "Вс", dayTemp: 21.321, nightTemp: 14.321 },
-];
-
 const Graphic = (settings: Props) => {
+  const theme = useTheme();
+
+  const data = [
+    { date: "Пн", dayTemp: 18, nightTemp: -12.321 },
+    { date: "Вт", dayTemp: 28.321, nightTemp: -11.321 },
+    { date: "Ср", dayTemp: 27.321, nightTemp: -17.321 },
+    { date: "Чт", dayTemp: 26.321, nightTemp: 15.321 },
+    { date: "Пт", dayTemp: 29.321, nightTemp: 11.321 },
+    { date: "Сб", dayTemp: 21.321, nightTemp: 14.321 },
+    { date: "Вс", dayTemp: 21.321, nightTemp: 14.321 },
+  ];
+
   return (
     <div className={styles.card}>
       <div className={styles.top_bar}>
@@ -45,13 +49,26 @@ const Graphic = (settings: Props) => {
             left: 20,
             bottom: 40,
           }}
+          style={{
+            background: theme.theme === Themes.DARK ? "#212025" : "#fff",
+            borderRadius: "0 0 20px 20px",
+          }}
         >
           {/* Легенда */}
           <Legend
+            verticalAlign="bottom"
             wrapperStyle={{
-              backgroundColor: "#f5f5f5",
-              border: "1px solid #d5d5d5",
-              padding: "5px",
+              // display: "flex",
+              // justifyContent: "center",
+              // alignItems: "flex-end",
+              backgroundColor: theme.theme === Themes.DARK ? "#212025" : "#fff",
+              // border: "1px solid #d5d5d5",
+              fontWeight: "bold",
+            }}
+            formatter={(value: string, entry: any) => {
+              return value === "dayTemp"
+                ? "Температура днем"
+                : "Температура ночью";
             }}
           />
           {/* Сетка */}
@@ -63,15 +80,21 @@ const Graphic = (settings: Props) => {
           />
 
           {/* Значения оси Х - время */}
-          <XAxis dataKey="date" tickLine={false} />
+          <XAxis
+            dataKey="date"
+            tickLine={false}
+            stroke={theme.theme === Themes.DARK ? "#fff" : "#000"}
+          />
 
           {/* Значения оси У - температура */}
           <YAxis
             tickLine={false}
             tickCount={5}
+            stroke={theme.theme === Themes.DARK ? "#fff" : "#000"}
             tickFormatter={(value) => {
               return value > 0 ? `+${value}°C` : `${value}°C`;
             }}
+            padding={{ bottom: 10 }}
           />
 
           {/* Подсказка при наведении */}
