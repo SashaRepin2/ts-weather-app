@@ -67,7 +67,7 @@
     padding: 5px;
 
     // DESIGN
-    background-color: #0d1117; //var(#{--components-background-default})
+    background-color: var(#{--tooltip-background-default});
     border-radius: 0 0 $card-border-radius $card-border-radius;
 
     .item {

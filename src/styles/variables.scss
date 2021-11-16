@@ -35,6 +35,13 @@ $card-background-dark: #2e3035;
 $card-box-shadow-light: 0px 3px 20px rgba(147, 144, 144, 0.28);
 $card-box-shadow-dark: 0px 3px 20px rgba(5, 5, 5, 0.28);
 
+// TOOLTIP
+// TITLE BG
+// $tooltip-title-background-dark: ;
+// $tooltip-title-background-light: ;
+// // CONTENT BACKGROUND
+$tooltip-background-dark: #0d1117;
+$tooltip-background-light: rgba(71, 147, 255, 0.2);
 :root {
   // BODY
   // Background
@@ -77,4 +84,9 @@ $card-box-shadow-dark: 0px 3px 20px rgba(5, 5, 5, 0.28);
   --text-color-dark: #{$dark-color};
   --text-color-light: #{$light-color};
   --text-color-default: var(#{--text-color-dark});
+
+  // TOOLTIP
+  --tooltip-background-dark: #{$tooltip-background-dark};
+  --tooltip-background-light: #{$tooltip-background-light};
+  --tooltip-background-default: var(#{--tooltip-background-dark});
 }

@@ -13,6 +13,7 @@ export const changeCssRootVariables = (theme: Themes) => {
     "card-background",
     "card-shadow",
     "text-color",
+    "tooltip-background",
   ];
 
   components.forEach((component) => {
